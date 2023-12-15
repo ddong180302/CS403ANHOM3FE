@@ -1,0 +1,22 @@
+.infor {
+    padding: 10px 0 10px 40px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+}
+
+.infor .div-label {
+    width: 30%;
+}
+
+.infor .div-input {
+    width: 70%;
+}
+
+.infor .div-input .input {
+    width: 80%;
+    outline: none;
+    border: 1px solid #333;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
