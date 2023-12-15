@@ -76,11 +76,25 @@ const NhanKhau = () => {
   };
 
   const handleSearch = () => {
-    // Xử lý tìm kiếm dựa trên searchText
+    const filteredData = dataNhanKhau.filter((item) => {
+      const maSoDinhDanh = item.MaSoDinhDanh.toString();
+      return (
+        item.HoTen.toLowerCase().includes(searchText.toLowerCase())
+        ||
+        maSoDinhDanh.toLowerCase().includes(searchText.toLowerCase())
+      );
+    });
+
+    setDataNhanKhau(filteredData);
   };
 
   const handleSearchTextChange = (event) => {
     setSearchText(event.target.value);
+  };
+
+  const handleReset = () => {
+    setSearchText('');
+    fetchListNhanKhau();
   };
   const handleCreateNhanKhau = () => {
     setShowModalCreate(true)
@@ -157,19 +171,7 @@ const NhanKhau = () => {
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <ToastContainer />
+
       <Box m="20px">
         <Header title="Nhân Khẩu" subtitle="Quản lý Nhân Khẩu" />
         <Box style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -185,6 +187,9 @@ const NhanKhau = () => {
             />
             <Button style={{ padding: "16px", marginLeft: "20px" }} variant="contained" onClick={handleSearch}>
               Tìm kiếm
+            </Button>
+            <Button style={{ padding: "16px", marginLeft: "20px" }} variant="contained" onClick={handleReset}>
+              Reset
             </Button>
           </Box>
         </Box>
@@ -240,6 +245,20 @@ const NhanKhau = () => {
         dataEdit={dataEdit}
         fetchListNhanKhau={fetchListNhanKhau}
       />
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer />
     </>
   );
 };

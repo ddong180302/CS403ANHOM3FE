@@ -16,7 +16,7 @@ const Dashboard = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
-       
+
       </Box>
 
       {/* GRID & CHARTS */}
@@ -27,7 +27,7 @@ const Dashboard = () => {
         gap="20px"
       >
         {/* ROW 1 */}
-        <Box
+        {/* <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -43,8 +43,8 @@ const Dashboard = () => {
               />
             }
           />
-        </Box>
-        <Box
+        </Box> */}
+        {/* <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -60,9 +60,9 @@ const Dashboard = () => {
               />
             }
           />
-        </Box>
+        </Box> */}
 
-        <Box
+        {/* <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
@@ -78,7 +78,7 @@ const Dashboard = () => {
               />
             }
           />
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );
